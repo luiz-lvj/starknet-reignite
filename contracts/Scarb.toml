@@ -7,7 +7,7 @@ edition = "2024_07"
 openzeppelin_token = "1.0.0"
 pragma_lib = { git = "https://github.com/astraly-labs/pragma-lib" }
 starknet = "2.11.4"
-vesu = { git = "https://github.com/vesuxyz/vesu-v1" }
+# vesu = { git = "https://github.com/vesuxyz/vesu-v1" }
 
 [patch."https://github.com/OpenZeppelin/cairo-contracts.git"]   # <── key line
 openzeppelin_account = "1.0.0"          # registry version that exists on scarbs.xyz
@@ -15,12 +15,7 @@ openzeppelin_account = "1.0.0"          # registry version that exists on scarbs
 
 [dev-dependencies]
 assert_macros = "2.11.4"
-snforge_std = "0.21.0"       # version here is irrelevant; the patch below wins
-
-[patch.'registry+https://scarbs.xyz'.snforge_std]
-git    = "https://github.com/foundry-rs/starknet-foundry"
-tag    = "0.43.1"
-subdir = "crates/snforge_std" 
+snforge_std = "0.43.1"       # version here is irrelevant; the patch below wins
 
 [[target.starknet-contract]]
 sierra = true
