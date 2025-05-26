@@ -17,6 +17,7 @@ pub mod StrategyVault {
 
     #[abi(embed_v0)]
     impl BTCFiStrategyImpl = BTCFiStrategyComponent::BTCFiStrategyImpl<ContractState>;
+    impl BTCFiStrategyInternalImpl = BTCFiStrategyComponent::InternalImpl<ContractState>;
 
     #[storage]
     struct Storage {
@@ -46,9 +47,9 @@ pub mod StrategyVault {
     }
 
     #[constructor]
-    fn constructor(ref self: ContractState, payment_token: ContractAddress, name: ByteArray, symbol: ByteArray) {
+    fn constructor(ref self: ContractState, payment_token: ContractAddress, oracle_address: ContractAddress, name: ByteArray, symbol: ByteArray) {
         self.erc20.initializer(name, symbol);
-
+        self.btcfi_strategy.initializer(payment_token, oracle_address);
     }
 
     #[abi(embed_v0)]
