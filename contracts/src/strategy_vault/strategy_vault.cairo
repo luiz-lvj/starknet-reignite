@@ -1,7 +1,8 @@
 #[starknet::contract]
 pub mod StrategyVault {
 
-    use crate::strategy_vault::interface;
+    use crate::strategies::interface::IBTCFiStrategy;
+use crate::strategy_vault::interface;
     use crate::strategies::BTCFiStrategy::{BTCFiStrategyComponent};
     use openzeppelin_token::erc20::erc20::{ERC20Component, ERC20HooksEmptyImpl};
     use openzeppelin_token::erc20::interface::{ IERC20Dispatcher, IERC20DispatcherTrait };
@@ -67,6 +68,8 @@ pub mod StrategyVault {
             let exchange_rate = self.exchange_rate();
 
             let amount_to_mint = amount * exchange_rate / 100000;
+
+            self.btcfi_strategy.deposit_strategy(amount_to_mint);
 
             self.erc20.mint(caller, amount_to_mint);
 
