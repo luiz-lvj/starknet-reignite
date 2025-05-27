@@ -1,0 +1,2 @@
+BTCFi Strategy Class Hash: [0x05fd852615fb2c4debf65b9d39008aeab75311193c50bf0a4512c290ff98fead](https://sepolia.voyager.online/class/0x05fd852615fb2c4debf65b9d39008aeab75311193c50bf0a4512c290ff98fead)
+Contract deployed: [0x076923fbd1405dbacb8c223a32be95d1ccb213ef72ccb38e1984cb0a266a9d75](https://sepolia.voyager.online/contract/0x076923fbd1405dbacb8c223a32be95d1ccb213ef72ccb38e1984cb0a266a9d75)
